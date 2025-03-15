@@ -43,6 +43,7 @@
           legacyFabricServers = callPackage ./pkgs/legacy-fabric-servers { inherit vanillaServers; };
           paperServers = callPackage ./pkgs/paper-servers { inherit vanillaServers; };
           velocityServers = callPackage ./pkgs/velocity-servers { };
+          forgeServers = callPackage ./pkgs/forge-servers { inherit vanillaServers; };
           minecraftServers =
             vanillaServers // fabricServers // quiltServers // legacyFabricServers // paperServers;
 
@@ -51,6 +52,7 @@
           quilt-server = quiltServers.quilt;
           paper-server = paperServers.paper;
           velocity-server = velocityServers.velocity;
+          forge-server = forgeServers.forge;
           minecraft-server = vanilla-server;
         }
         // (builtins.mapAttrs (n: v: callPackage v { }) (self.lib.rakeLeaves ./pkgs/tools));
@@ -113,6 +115,7 @@
             quilt-server
             paper-server
             velocity-server
+            forge-server
             minecraft-server
             nix-modrinth-prefetch
             ;

@@ -1,0 +1,8 @@
+{
+  "47.3.7": {
+    "mainClass": "net.minecraftforge.installer.SimpleInstaller",
+    "libraries": [
+
+    ]
+  }
+}
